@@ -1,0 +1,17 @@
+CREAT TABLE employee (
+id serial PREMARY KEY,
+name VARCHAR(50) NOT NULL,
+birthday DATE,
+email VARCHAR(100)
+);
+UPDATE employee SET birthday ='1995-03-13' WHERE name='Gallardo' RETURNING*;
+UPDATE employee SET name ='Cem Yücehünkar' WHERE name='Gilby' RETURNING*;
+UPDATE employee SET name ='Osman' WHERE id=48 RETURNING*;
+UPDATE employee SET email ='pd.cemcem@gmail.com' WHERE id=36 RETURNING*;
+UPDATE employee SET birthday ='1992-05-17' WHERE email = 'egosalvez6@narod.ru' RETURNING*;
+
+DELETE FROM employee WHERE id=20 ;
+DELETE FROM employee WHERE email='pd.cemcem@gmail.com' ;
+DELETE FROM employee WHERE name='Cem Yücehünkar' ;
+DELETE FROM employee WHERE birthday='1992-05-17' ;
+DELETE FROM employee WHERE name='Osman' ;
